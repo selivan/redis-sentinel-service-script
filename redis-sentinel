@@ -24,7 +24,7 @@ PIDFILE="$RUNDIR"/sentinel.pid
 start() {
         echo "Starting $NAME ..."
         mkdir -p "$RUNDIR"
-        chown "$USER":"$GROUP" "$RUNDIR" "$PIDFILE"
+        chown "$USER":"$GROUP" "$RUNDIR"
         # --oknodo  Return exit status 0 instead of 1 if no actions are (would be) taken.
         start-stop-daemon --start --exec "$DAEMON" --pidfile "$PIDFILE" --chuid "$USER":"$GROUP" --oknodo -- "$DAEMON_ARGS"
 }
